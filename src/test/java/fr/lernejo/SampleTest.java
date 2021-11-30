@@ -44,11 +44,6 @@ class SampleTest {
         assertThat(facto).isEqualTo(expectedResult);
     }
 
-    @Test ()
-    void testIllegalArgument() {
-        Class<IllegalArgumentException> expected = IllegalArgumentException.class;
-        int n = -5;
-        sample.fact(n);
-    }
+
 
 }
