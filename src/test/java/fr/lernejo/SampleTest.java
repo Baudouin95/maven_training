@@ -1,6 +1,8 @@
 package fr.lernejo;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import static  org.assertj.core.api.Assertions.assertThat;
@@ -17,6 +19,18 @@ class SampleTest {
     void add_behaves_as_expected(int a, int b, int expectedResult){
         int result = sample.op(Sample.Operation.ADD,a,b);
         assertThat(result).isEqualTo(expectedResult);
+    }
+
+
+    @ParameterizedTest
+    @CsvSource({
+        "0,1",
+        "5,120",
+        "7,5040",
+    })
+    void fact_behaves_as_expected (int n, int expectedResult) {
+        int facto = sample.fact(n);
+        assertThat(facto).isEqualTo(expectedResult);
     }
 
 }
