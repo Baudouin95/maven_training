@@ -21,6 +21,17 @@ class SampleTest {
         assertThat(result).isEqualTo(expectedResult);
     }
 
+    @ParameterizedTest
+    @CsvSource({
+        "2,3,6",
+        "0,3,0",
+        "4,5,20",
+    })
+    void mult_behaves_as_expected(int a, int b, int expectedResult){
+        int result = sample.op(Sample.Operation.MULT,a,b);
+        assertThat(result).isEqualTo(expectedResult);
+    }
+
 
     @ParameterizedTest
     @CsvSource({
