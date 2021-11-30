@@ -44,4 +44,15 @@ class SampleTest {
         assertThat(facto).isEqualTo(expectedResult);
     }
 
+    @ParameterizedTest
+    @CsvSource({
+        "-0,N should be positive",
+        "-10,N should be positive",
+        "-65,N should be positive",
+    })
+    void facto_behaves_as_expected (int n, String expectedResult) {
+        int facto = sample.fact(n);
+        assertThat(facto).isEqualTo(expectedResult);
+    }
+
 }
